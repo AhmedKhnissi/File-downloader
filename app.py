@@ -14,9 +14,14 @@ def list_files():
     files = os.listdir(FILES_DIR)
     return jsonify(files)
 
+@app.route('/test')
+def test_page():
+    return render_template('test.html')
+
 @app.route('/download/<filename>')
 def download(filename):
     return send_from_directory(FILES_DIR, filename, as_attachment=True)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

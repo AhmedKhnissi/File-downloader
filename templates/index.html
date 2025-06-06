@@ -1,16 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html style="font-size: 16px;" lang="fr">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Liste des fichiers</title>
+    <meta name="keywords" content="Perfectionnement de la conception">
+    <meta name="theme-color" content="#478ac9">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/nicepage.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/Page-2.css') }}" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Open+Sans:400,600,700">
+    
+    <script class="u-script" src="{{ url_for('static', filename='../static/js/jquery.js') }}" defer></script>
+    <script class="u-script" src="{{ url_for('static', filename='../static/js/nicepage.js') }}" defer></script>
 </head>
-<body>
-    <h1>Fichiers disponibles</h1>
-    <ul>
+
+<body class="u-body u-xl-mode" data-lang="fr">
+<header class="u-clearfix u-header u-header" id="header">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <a href="#" class="u-image u-logo u-image-1">
+      <img src="{{ url_for('static', filename='../static/images/finovox_loggin.png') }}" class="u-logo-image u-logo-image-1">
+    </a>
+    <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" role="navigation">
+      <div class="menu-collapse">
+        <a class="u-button-style u-nav-link" href="#" aria-label="Open menu">
+          <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+          <svg id="menu-hamburger" viewBox="0 0 16 16"><rect y="1" width="16" height="2"/><rect y="7" width="16" height="2"/><rect y="13" width="16" height="2"/></svg>
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-unstyled">
+          <li><a class="u-nav-link" href="/api/files">Json List</a>
+</li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="u-align-center u-clearfix u-image u-shading u-section-1" data-image-width="1080" data-image-height="1080">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <h1 class="u-align-center u-text u-text-default u-text-1">Fichiers disponibles</h1>
+  </div>
+</section>
+
+<section class="u-clearfix u-grey-5 u-section-2" id="sec-6681">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <div class="u-expanded-width u-list u-list-1">
+      <div class="u-repeater u-repeater-1">
+
         {% for file in files %}
-          <li><a href="{{ url_for('download', filename=file) }}">{{ file }}</a></li>
+        <div class="u-container-style u-list-item u-shape-round u-white u-video-cover u-radius-20 u-repeater-item">
+          <div class="u-container-layout u-container-layout-1">
+            <img alt="Icône" class="u-image u-image-default u-image-1" src="{{ url_for('static', filename='images/file.png') }}">
+            <h5 class="u-align-center u-text u-text-default u-text-1">{{ file }}</h5>
+            <p class="u-align-center u-text u-text-default u-text-2">Cliquez pour télécharger ce fichier.</p>
+           <div style="text-align: center;">
+  <a href="{{ url_for('download', filename=file) }}" 
+     style="display: inline-block; padding: 8px 16px; background-color: #0f9bc9; color: white; border-radius: 5px; text-decoration: none;">
+    Télécharger
+  </a>
+</div>
+
+          </div>
+        </div>
         {% else %}
-          <li>Aucun fichier trouvé.</li>
+        <p style="text-align: center;">Aucun fichier trouvé.</p>
         {% endfor %}
-    </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">© 2025 Finovox</p>
+  </div>
+</footer>
+
 </body>
 </html>

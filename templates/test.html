@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fichiers JSON</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+    <script>
+        async function afficherJSON() {
+            const response = await fetch("/api/files");
+            const data = await response.json();
+
+            const affichage = document.getElementById("json-output");
+            affichage.textContent = JSON.stringify(data, null, 2); // indenté et lisible
+        }
+
+        window.onload = afficherJSON;
+    </script>
+</head>
+<body>
+    <h1>Affichage JSON des fichiers disponibles</h1>
+    <pre id="json-output">{}</pre>
+</body>
+</html>
