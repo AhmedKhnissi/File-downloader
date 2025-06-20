@@ -98,7 +98,7 @@ Comme vous pouvez le voir sur l'image ci-dessus, on a notre application conteneu
 ![Image](https://github.com/user-attachments/assets/3de195e9-1bdc-4865-96e5-6611c14298e3)
 
 
-### **Step 5: lancement de l'application à travers docker **
+### **Step 5: lancement de l'application à travers docker**
 
 Ici, on récupère l'image de Docker Hub afin d'exécuter les tests unitaires avant de lancer l'application,
 à travers le  **`RUN_MODE=test` qu'on defini dans un fichier **`shell` d'automatisation appeler entrypoint.sh lancer à partir de l'image docker elle meme 
@@ -117,7 +117,7 @@ docker run -d -p 5000:5000 -v "${PWD}:/app" flask-app
 on peut trouveer les resultats des tests dans le fichier **`resultats_tests.txt` 
 
 
-### **Step 5: Les interfaces de l'application **
+### **Step 6: Les interfaces de l'application**
 
 Pour commencer, vous pouvez tester l’endpoint de téléchargement soit par le bouton de téléchargement lui-même, qui se trouve sur chaque fichier dans la page d’accueil, soit en tapant cette URL :
 ```
