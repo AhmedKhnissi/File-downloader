@@ -1,4 +1,4 @@
-﻿# **File-downloader est une application delivré dans le cadre d'un test technique avec Finovox **
+﻿# **File-downloader est une application delivré dans le cadre d'un test technique**
 # ✨Let’s Start the Project ✨
 ## **Part 1: Clone du repo Github **
 ### **Step 1: Clone du code**
